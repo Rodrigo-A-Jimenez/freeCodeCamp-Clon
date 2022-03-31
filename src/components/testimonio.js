@@ -1,19 +1,32 @@
-import React from "react";
+import React from 'react';
+import testimonioEmma from '../images/testimonioEmma.png';
+import '../styles/testimonio.css';
 
-export function Testimonio() {
-    return(
-        <div className="testimonio">
-            <img 
-                className="imagen-testimonio"
-                src={require('../images/testimonio-Emma.png')}
-                alt="Foto de Emma"/>
-            
-            <div>
-                <p className="testimonio-nombre">Emma Bostian en Suecia</p>
-                <p className="testimonio-cargo">Directora de software en Spotify</p>
-                <p className="testimonio-texto">"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en freeCodeCamp me dio las habilidades y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify."</p>
-            </div>
-        </div>
-    )
+function Testimonio(props) {
+  return (
+    <div className="testimonio">
+      <img
+        className="imagen-testimonio"
+        src={testimonioEmma}
+        alt="Foto de Emma"
+      />
+
+      <div className="contenedor-texto-testimonio">
+        <p className="testimonio-nombre">
+          {props.nombre}
+          en
+          {props.pais}
+        </p>
+        <p className="testimonio-cargo">
+          {props.cargo}
+          en
+          {props.empresa}
+        </p>
+        <p className="testimonio-texto">
+          {props.testimonio}
+        </p>
+      </div>
+    </div>
+  );
 }
-
+export default Testimonio;
