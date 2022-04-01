@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import testimonioEmma from '../images/testimonioEmma.png';
+import testimonioEmma from '../images/testimonioEmma Bostian.png';
 import '../styles/testimonio.css';
 
 function Testimonio(props) {
+  const {
+    nombre, pais, cargo, empresa, testimonio,
+  } = props;
   return (
     <div className="testimonio">
       <img
@@ -13,20 +17,17 @@ function Testimonio(props) {
 
       <div className="contenedor-texto-testimonio">
         <p className="testimonio-nombre">
-          {props.nombre}
-          en
-          {props.pais}
+          <strong>{nombre}</strong> en {pais}
         </p>
         <p className="testimonio-cargo">
-          {props.cargo}
-          en
-          {props.empresa}
+          {cargo} en {empresa}
         </p>
         <p className="testimonio-texto">
-          {props.testimonio}
+          {testimonio}
         </p>
       </div>
     </div>
   );
 }
+
 export default Testimonio;
